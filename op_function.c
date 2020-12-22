@@ -60,6 +60,8 @@ void f_push(stack_t **stack, unsigned int line_number)
 	}
 	for (i = 0; TB[1][i]; i++)
 	{
+		if (TB[1][i] == '-' && i == 0)
+			continue;
 		if (TB[1][i] > '9' || TB[1][i] < '0')
 		{
 			ERR_push(line_number);
