@@ -48,5 +48,5 @@ int ERR_arg(void);
 int ERR_push(unsigned int line_number);
 int ERR_pint(unsigned int line_number);
 int ERR_invalid(unsigned int line_number, char *opcode);
-int ERR_malloc();
+int ERR_malloc(void);
 #endif
