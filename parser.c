@@ -18,12 +18,20 @@ char **parse_in_alloc_tab(char *s)
 	}
 	/*a passer peut etre en copy*/
 	tb = malloc(sizeof(char *) * 3);
+	if (tb == NULL)
+	{
+		ERR_malloc();
+		return (NULL);
+	}
 	token = strtok(s, d);
 	while (token != NULL)
 	{
 		tb[i] = malloc(sizeof(char) * strlen(token) + 1);
 		if (tb[i] == NULL)
+		{
+			ERR_malloc();
 			return (NULL);
+		}
 		for (j = 0; j < strlen(token); j++)
 			tb[i][j] = token[j];
 		tb[i][j] = '\0';

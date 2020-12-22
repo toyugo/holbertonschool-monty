@@ -31,7 +31,11 @@ stack_t *add_dnodeint(stack_t **head, int n)
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
+	{
+		ERR_malloc();
 		return (NULL);
+	}
+
 	if (*head == NULL)
 		new->next = NULL;
 	else
@@ -57,6 +61,7 @@ void f_push(stack_t **stack, unsigned int line_number)
 	if (TB[1] == NULL)
 	{
 		ERR_push(line_number);
+		return;
 	}
 	for (i = 0; TB[1][i]; i++)
 	{
