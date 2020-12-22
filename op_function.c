@@ -55,7 +55,6 @@ void f_push(stack_t **stack, unsigned int line_number)
 	if (TB[1] == NULL)
 	{
 		ERR_push(line_number);
-		return;
 	}
 	add_dnodeint(stack, atoi(TB[1]));
 }

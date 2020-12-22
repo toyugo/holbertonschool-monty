@@ -40,6 +40,13 @@ int main(int argc, char **argv)
 		if (code != NULL)
 			code(&stack, cpline);
 		freetab(TB);
+		if (ERR == 1)
+		{
+				free_stack(stack);
+				free(buffer);
+				fclose(fp);
+				exit(EXIT_FAILURE);
+		}
 		line_size = getline(&buffer, &bufsize, fp);/*go to next line*/
 		cpline++;
 	}

@@ -33,6 +33,7 @@ typedef struct instruction_s
 		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 char **TB;
+int ERR;
 char **parse_in_alloc_tab(char *s);
 void (*find_function(char *code))(stack_t **, unsigned int);
 int print_dlistint(const stack_t *h);

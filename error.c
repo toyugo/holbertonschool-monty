@@ -7,6 +7,7 @@
 int ERR_f_open(char *file_n)
 {
 	fprintf(stderr, "Error: Can't open file %s\n", file_n);
+	ERR = 1;
 	return (EXIT_FAILURE);
 }
 /**
@@ -16,6 +17,7 @@ int ERR_f_open(char *file_n)
 int ERR_arg(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
+	ERR = 1;
 	return (EXIT_FAILURE);
 }
 /**
@@ -26,6 +28,7 @@ int ERR_arg(void)
 int ERR_push(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	ERR = 1;
 	return (EXIT_FAILURE);
 }
 
@@ -37,6 +40,7 @@ int ERR_push(unsigned int line_number)
 int ERR_pint(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	ERR = 1;
 	return (EXIT_FAILURE);
 }
 /**
@@ -48,5 +52,6 @@ int ERR_pint(unsigned int line_number)
 int ERR_invalid(unsigned int line_number, char *opcode)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+	ERR = 1;
 	return (EXIT_FAILURE);
 }
