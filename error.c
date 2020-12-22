@@ -28,3 +28,14 @@ int ERR_push(unsigned int line_number)
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 	return (EXIT_FAILURE);
 }
+
+/**
+ * ERR_pint - ERR_pint
+ * @line_number: line number
+ * Return: 0
+ */
+int ERR_pint(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+	return (EXIT_FAILURE);
+}

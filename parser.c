@@ -44,6 +44,7 @@ void (*find_function(char *code))(stack_t **, unsigned int)
 	instruction_t _instruction[] = {
 		{"push", f_push},
 		{"pall", f_pall},
+		{"pint", f_pint},
 		{NULL, NULL}
 	};
 	/*check in instruction*/

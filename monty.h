@@ -39,9 +39,11 @@ int print_dlistint(const stack_t *h);
 stack_t *add_dnodeint(stack_t **head, int n);
 void f_push(stack_t **stack, unsigned int line_number);
 void f_pall(stack_t **stack, unsigned int line_number);
+void f_pint(stack_t **stack, unsigned int line_number);
 int freetab(char **tb);
 void free_stack(stack_t *head);
 int ERR_f_open(char *file_n);
 int ERR_arg(void);
 int ERR_push(unsigned int line_number);
+int ERR_pint(unsigned int line_number);
 #endif
