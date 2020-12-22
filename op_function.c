@@ -71,6 +71,9 @@ void f_pall(stack_t **stack, unsigned int line_number)
 	stack_t *ptr;
 
 	(void)line_number;
-	ptr = *stack;
-	print_dlistint(ptr);
+	if (*stack != NULL)
+	{
+		ptr = *stack;
+		print_dlistint(ptr);
+	}
 }
