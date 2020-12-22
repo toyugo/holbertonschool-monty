@@ -43,4 +43,5 @@ int freetab(char **tb);
 void free_stack(stack_t *head);
 int ERR_f_open(char *file_n);
 int ERR_arg(void);
+int ERR_push(unsigned int line_number);
 #endif

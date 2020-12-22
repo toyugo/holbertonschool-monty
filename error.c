@@ -18,3 +18,13 @@ int ERR_arg(void)
 	fprintf(stderr, "USAGE: monty file\n");
 	return (EXIT_FAILURE);
 }
+/**
+ * ERR_push- ERR_push
+ * @line_number: line number
+ * Return: 0
+ */
+int ERR_push(unsigned int line_number)
+{
+	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	return (EXIT_FAILURE);
+}
