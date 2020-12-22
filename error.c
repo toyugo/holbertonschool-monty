@@ -53,7 +53,7 @@ int ERR_pint(unsigned int line_number)
  */
 int ERR_invalid(unsigned int line_number, char *opcode)
 {
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+	/*fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);*/
 	ERR = 1;
 	return (EXIT_FAILURE);
 }
