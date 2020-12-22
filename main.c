@@ -45,6 +45,8 @@ int main(int argc, char **argv)
 	while (line_size != EOF)
 	{
 		TB = parse_in_alloc_tab(buffer);
+		if (TB[0] == NULL)
+			ERR_invalid(cpline, TB[0]);
 		code = find_function(TB[0]);
 		if (code == NULL)
 			ERR_invalid(cpline, TB[0]);
