@@ -7,7 +7,7 @@
 int ERR_f_open(char *file_n)
 {
 	(void)file_n;
-	/*fprintf(stderr, "Error: Can't open file %s\n", file_n);*/
+	fprintf(stderr, "Error: Can't open file %s\n", file_n);
 	ERR = 1;
 	return (EXIT_FAILURE);
 }
