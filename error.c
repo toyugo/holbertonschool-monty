@@ -39,3 +39,14 @@ int ERR_pint(unsigned int line_number)
 	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 	return (EXIT_FAILURE);
 }
+/**
+ * ERR_invalid- ERR_invalid
+ * @line_number: line number
+ * @opcode: opcode
+ * Return: 0
+ */
+int ERR_invalid(unsigned int line_number, char *opcode)
+{
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+	return (EXIT_FAILURE);
+}

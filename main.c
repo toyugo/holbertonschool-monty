@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	FILE *fp;
 	size_t bufsize = 1000;
 	ssize_t line_size;
-	unsigned int cpline = 0;
+	unsigned int cpline = 1;
 	/*GetFunction*/
 	void (*code)(stack_t**, unsigned int);
 	stack_t *stack = NULL;
@@ -33,6 +33,8 @@ int main(int argc, char **argv)
 	{
 		TB = parse_in_alloc_tab(buffer);
 		code = find_function(TB[0]);
+		if (code == NULL)
+			ERR_invalid(cpline, TB[0]);
 		/*Initialise the stack*/
 		/*Launch Corresponding function*/
 		if (code != NULL)

@@ -52,22 +52,10 @@ stack_t *add_dnodeint(stack_t **head, int n)
  */
 void f_push(stack_t **stack, unsigned int line_number)
 {
-	int i;
-
 	if (TB[1] == NULL)
 	{
 		ERR_push(line_number);
 		return;
-	}
-	for (i = 0; TB[1]; i++)
-	{
-		if (TB[1][i] == '-' && i == 0)
-			continue;
-		if (TB[1][i] > '9' || TB[1][i] < '0')
-		{
-			ERR_push(line_number);
-			return;
-		}
 	}
 	add_dnodeint(stack, atoi(TB[1]));
 }
