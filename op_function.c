@@ -52,7 +52,6 @@ stack_t *add_dnodeint(stack_t **head, int n)
  */
 void f_push(stack_t **stack, unsigned int line_number)
 {
-	(void)line_number;
 	int i;
 
 	if (TB[1] == NULL)
