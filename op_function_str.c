@@ -61,15 +61,15 @@ void f_rotl(stack_t **stack, unsigned int line_number)
 	ptrM = *stack;
 	if (ptr == NULL)
 		return;
-
 	while (ptrM->next != NULL)
 		ptrM = ptrM->next;
+
 	tmp_nb = ptr->n;
 	ptr->n = ptrM->n;
 	ptrM->n = tmp_nb;
 	ptrM = *stack;
 	ptr = ptr->next;
-	while (ptr->next != NULL)
+	while (ptr != NULL && ptr->next != NULL)
 	{
 		tmp_nb = ptr->n;
 		ptr->n = ptrM->n;
