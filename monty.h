@@ -65,4 +65,5 @@ int ERR_sub(unsigned int line_number);
 int ERR_div(unsigned int line_number);
 int ERR_mul(unsigned int line_number);
 int ERR_mod(unsigned int line_number);
+int ERR_div_o(unsigned int line_number);
 #endif
