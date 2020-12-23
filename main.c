@@ -22,44 +22,43 @@ void free_exit(stack_t *stack, char *buffer, FILE *fp)
  */
 int main(int argc, char **argv)
 {
-	char *buffer = NULL;
-	FILE *fp;
 	size_t bufsize = 1000;
 	ssize_t line_size;
 	unsigned int cpline = 1;
 	void (*code)(stack_t**, unsigned int);
-	stack_t *stack = NULL;
 
+	STACK = NULL;
+	BUFFER = NULL;
 	if (argc != 2)
 	{
 		ERR_arg();
 		exit(EXIT_FAILURE);
 	}
-	fp = fopen(argv[1], "r");
-	if (!fp)
+	FP = fopen(argv[1], "r");
+	if (!FP)
 	{
 		ERR_f_open(argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	line_size = getline(&buffer, &bufsize, fp);
+	line_size = getline(&BUFFER, &bufsize, FP);
 	while (line_size != EOF)
 	{
-		TB = parse_in_alloc_tab(buffer);
+		parse_in_alloc_tab(BUFFER);
 		if (TB[0] == NULL)
 			ERR_invalid(cpline, TB[0]);
 		code = find_function(TB[0]);
 		if (code == NULL)
 			ERR_invalid(cpline, TB[0]);
 		if (code != NULL)
-			code(&stack, cpline);
+			code(&STACK, cpline);
 		freetab(TB);
 		if (ERR == 1)
-			free_exit(stack, buffer, fp);
-		line_size = getline(&buffer, &bufsize, fp);/*go to next line*/
+			free_exit(STACK, BUFFER, FP);
+		line_size = getline(&BUFFER, &bufsize, FP);/*go to next line*/
 		cpline++;
 	}
-	free_stack(stack);
-	free(buffer);
-	fclose(fp);
+	free_stack(STACK);
+	free(BUFFER);
+	fclose(FP);
 	return (0);
 }

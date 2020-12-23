@@ -10,15 +10,14 @@ char **parse_in_alloc_tab(char *s)
 	unsigned int j = 0;
 	char d[] = " \n\t";
 	char *token;
-	char **tb;
 
 	if (s == NULL || s[0] == '\0')
 	{
 		return (NULL);
 	}
 	/*a passer peut etre en copy*/
-	tb = malloc(sizeof(char *) * 3);
-	if (tb == NULL)
+	TB = malloc(sizeof(char *) * 3);
+	if (TB == NULL)
 	{
 		ERR_malloc();
 		return (NULL);
@@ -26,20 +25,20 @@ char **parse_in_alloc_tab(char *s)
 	token = strtok(s, d);
 	while (token != NULL)
 	{
-		tb[i] = malloc(sizeof(char) * strlen(token) + 1);
-		if (tb[i] == NULL)
+		TB[i] = malloc(sizeof(char) * strlen(token) + 1);
+		if (TB[i] == NULL)
 		{
 			ERR_malloc();
 			return (NULL);
 		}
 		for (j = 0; j < strlen(token); j++)
-			tb[i][j] = token[j];
-		tb[i][j] = '\0';
+			TB[i][j] = token[j];
+		TB[i][j] = '\0';
 		token = strtok(NULL, d);
 		i++;
 	}
-	tb[i] = NULL;
-	return (tb);
+	TB[i] = NULL;
+	return (TB);
 }
 /**
  * find_function - find_function

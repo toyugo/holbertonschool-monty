@@ -5,7 +5,12 @@
  */
 int ERR_malloc(void)
 {
+
 	fprintf(stderr, "Error: malloc failed\n");
+	free(BUFFER);
+	fclose(FP);
+	free_stack(STACK);
+	freetab(TB);
 	ERR = 1;
-	return (EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }

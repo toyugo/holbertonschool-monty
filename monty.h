@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -34,6 +33,9 @@ typedef struct instruction_s
 } instruction_t;
 char **TB;
 int ERR;
+FILE *FP;
+char *BUFFER;
+stack_t *STACK;
 char **parse_in_alloc_tab(char *s);
 void (*find_function(char *code))(stack_t **, unsigned int);
 int print_dlistint(const stack_t *h);
