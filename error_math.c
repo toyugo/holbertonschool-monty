@@ -7,7 +7,7 @@
 int ERR_add(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-	free_Full(0);
+	free_Full(-1);
 	return (EXIT_FAILURE);
 }
 /**
@@ -18,7 +18,7 @@ int ERR_add(unsigned int line_number)
 int ERR_sub(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-	free_Full(0);
+	free_Full(-1);
 	return (EXIT_FAILURE);
 }
 /**
