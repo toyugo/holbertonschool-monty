@@ -63,6 +63,11 @@ void f_push(stack_t **stack, unsigned int line_number)
 		ERR_push(line_number);
 		return;
 	}
+	if (strlen(TB[1]) == 1 && TB[1][0] == '-') 
+	{
+			ERR_push(line_number);
+			return;
+	}
 	for (i = 0; TB[1][i]; i++)
 	{
 		if (TB[1][i] == '-' && i == 0)
