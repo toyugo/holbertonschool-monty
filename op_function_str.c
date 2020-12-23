@@ -58,11 +58,13 @@ void f_rotl(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	ptr = *stack;
-	if (ptr == NULL || ptr->next == NULL)
+	if (ptr == NULL)
 		return;
 	first_nb = ptr->n;
 	while (ptr->next != NULL)
 		ptr = ptr->next;
+	if (ptr == NULL)
+		return;
 	last_nb = ptr->n;
 	(*stack)->n = last_nb;
 	ptr->n = first_nb;
