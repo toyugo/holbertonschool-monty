@@ -44,3 +44,15 @@ void f_add(stack_t **stack, unsigned int line_number)
 	ptr->next->n = ptr->n + ptr->next->n;
 	f_Pop(stack, line_number);
 }
+/**
+ * f_nop - f_nop
+ * @stack: stack
+ * @line_number: line number
+ * Return: void
+ */
+void f_nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+	return;
+}

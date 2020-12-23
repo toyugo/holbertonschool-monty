@@ -45,6 +45,7 @@ void f_pall(stack_t **stack, unsigned int line_number);
 void f_pint(stack_t **stack, unsigned int line_number);
 void f_Pop(stack_t **stack, unsigned int line_number);
 void f_add(stack_t **stack, unsigned int line_number);
+void f_nop(stack_t **stack, unsigned int line_number)
 int freetab(char **tb);
 void free_stack(stack_t *head);
 int ERR_f_open(char *file_n);
