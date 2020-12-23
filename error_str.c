@@ -7,6 +7,6 @@
 int ERR_pchar(int line_number)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-	return (EXIT_FAILURE);
+	free_Full(-1);
 }
 
