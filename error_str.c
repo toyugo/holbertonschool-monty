@@ -10,6 +10,11 @@ int ERR_pchar(unsigned int line_number)
 	free_Full(-1);
 	return (EXIT_FAILURE);
 }
+/**
+ * ERR_swap - ERR_swap
+ * @line_number: string
+ * Return: 0
+ */
 int ERR_swap(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
