@@ -43,14 +43,11 @@ int main(int argc, char **argv)
 			i = parse_in_alloc_tab(BUFFER);
 			if (TB[0] != NULL)
 			{
-				if (i == 1)
-				{
-					code = find_function(TB[0]);
-					if (code == NULL)
-						ERR_invalid(cpline, TB[0]);
-					if (code != NULL)
-						code(&STACK, cpline);
-				}
+				code = find_function(TB[0]);
+				if (code == NULL)
+					ERR_invalid(cpline, TB[0]);
+				if (code != NULL)
+					code(&STACK, cpline);
 			}
 			freetab(TB);
 		}
