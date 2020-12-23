@@ -53,8 +53,12 @@ void (*find_function(char *code))(stack_t **, unsigned int)
 		{"pall", f_pall},
 		{"pint", f_pint},
 		{"pop", f_Pop},
-		{"add", f_add},
 		{"nop", f_nop},
+		{"add", f_add},
+		{"sub", f_sub},
+		{"mul", f_mul},
+		{"div", f_div},
+		{"mod", f_mod},
 		{NULL, NULL}
 	};
 	/*check in instruction*/

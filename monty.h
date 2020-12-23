@@ -44,8 +44,13 @@ void f_push(stack_t **stack, unsigned int line_number);
 void f_pall(stack_t **stack, unsigned int line_number);
 void f_pint(stack_t **stack, unsigned int line_number);
 void f_Pop(stack_t **stack, unsigned int line_number);
-void f_add(stack_t **stack, unsigned int line_number);
 void f_nop(stack_t **stack, unsigned int line_number);
+
+void f_add(stack_t **stack, unsigned int line_number);
+void f_sub(stack_t **stack, unsigned int line_number);
+void f_mul(stack_t **stack, unsigned int line_number);
+void f_div(stack_t **stack, unsigned int line_number);
+void f_mod(stack_t **stack, unsigned int line_number);
 int freetab(char **tb);
 void free_stack(stack_t *head);
 int ERR_f_open(char *file_n);
@@ -55,5 +60,9 @@ int ERR_pint(unsigned int line_number);
 int ERR_invalid(unsigned int line_number, char *opcode);
 int ERR_malloc(void);
 int ERR_pop(unsigned int line_number);
-int add_error(unsigned int line_number);
+int ERR_add(unsigned int line_number);
+int ERR_sub(unsigned int line_number);
+int ERR_div(unsigned int line_number);
+int ERR_mul(unsigned int line_number);
+int ERR_mod(unsigned int line_number);
 #endif
