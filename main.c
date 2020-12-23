@@ -23,7 +23,6 @@ void free_exit(stack_t *stack, char *buffer, FILE *fp)
 int main(int argc, char **argv)
 {
 	size_t bufsize = 0;
-	int i = 0;
 	ssize_t line_size;
 	unsigned int cpline = 1;
 	void (*code)(stack_t**, unsigned int);
