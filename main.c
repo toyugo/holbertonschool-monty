@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	{
 		if (BUFFER[0] != '#')
 		{
-			i = parse_in_alloc_tab(BUFFER);
+			parse_in_alloc_tab(BUFFER);
 			if (TB[0] != NULL)
 			{
 				code = find_function(TB[0]);
