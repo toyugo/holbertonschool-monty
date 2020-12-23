@@ -25,3 +25,22 @@ void f_Pop(stack_t **stack, unsigned int line_number)
 	*stack = ptrP;
 
 }
+/**
+ * f_add - f_add
+ * @stack: stack
+ * @line_number: line number
+ * Return: void
+ */
+void f_add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr;
+
+	ptr = *stack;
+	if (ptr == NULL || ptr->next == NULL)
+	{
+		add_error(line_number);
+		return;
+	}
+	ptr->next->n = ptr->n + ptr->next->n;
+	f_Pop(stack, line_number);
+}
