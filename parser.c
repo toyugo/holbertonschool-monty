@@ -23,7 +23,7 @@ char **parse_in_alloc_tab(char *s)
 		return (NULL);
 	}
 	token = strtok(s, d);
-	while (token != NULL)
+	while (token != NULL && i < 2)
 	{
 		TB[i] = malloc(sizeof(char) * strlen(token) + 1);
 		if (TB[i] == NULL)

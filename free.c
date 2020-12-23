@@ -7,16 +7,18 @@
 int freetab(char **tb)
 {
 	int j;
-
-	if (tb == NULL)
+	
+	(void)tb;
+	if (TB == NULL)
 		return (-1);
-	for (j = 0; tb[j]; j++)
+	for (j = 0; TB[j]; j++)
 	{
-		if (tb[j] == NULL)
+
+		if (TB[j] == NULL)
 			return (-1);
-		free(tb[j]);
+		free(TB[j]);
 	}
-	free(tb);
+	free(TB);
 	return (0);
 }
 /**
