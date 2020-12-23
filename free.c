@@ -44,6 +44,7 @@ void free_stack(stack_t *head)
  */
 int free_Full(int flag)
 {
+	printf("N\n");
 	free(BUFFER);
 	fclose(FP);
 	free_stack(STACK);
