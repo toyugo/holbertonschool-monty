@@ -38,8 +38,7 @@ int ERR_push(unsigned int line_number)
  */
 int ERR_pint(unsigned int line_number)
 {
-	(void)line_number;
-	/*fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);*/
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 	ERR = 1;
 	return (EXIT_FAILURE);
 }

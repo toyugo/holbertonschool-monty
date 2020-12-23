@@ -10,10 +10,10 @@ void f_pint(stack_t **stack, unsigned int line_number)
 	stack_t *ptr;
 
 	ptr = *stack;
-	if (ptr->next == NULL)
+	if (ptr == NULL)
 	{
 		ERR_pint(line_number);
 		return;
 	}
-	printf("%d\n", (*stack)->next->n);
+	printf("%d\n", ptr->n);
 }
