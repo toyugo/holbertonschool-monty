@@ -5,7 +5,6 @@
  */
 int ERR_malloc(void)
 {
-
 	fprintf(stderr, "Error: malloc failed\n");
 	free(BUFFER);
 	fclose(FP);
