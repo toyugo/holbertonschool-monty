@@ -76,7 +76,7 @@ void f_div(stack_t **stack, unsigned int line_number)
 	{
 		ERR_div_o(line_number);
 		return;
-	}	
+	}
 	ptr->next->n = ptr->n / ptr->next->n;
 	f_Pop(stack, line_number);
 }
