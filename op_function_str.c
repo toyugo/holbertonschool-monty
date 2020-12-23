@@ -58,7 +58,7 @@ void f_rotl(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 	ptr = *stack;
-	if (ptr == NULL)
+	if (ptr == NULL || ptr->next == NULL)
 		return;
 	first_nb = ptr->n;
 	while (ptr->next != NULL)
