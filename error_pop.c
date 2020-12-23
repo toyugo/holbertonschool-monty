@@ -7,7 +7,7 @@
 int ERR_pop(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-	free_Full();
+	free_Full(0);
 	return (EXIT_FAILURE);
 }
 /**
@@ -18,6 +18,6 @@ int ERR_pop(unsigned int line_number)
 int add_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-	free_Full();
+	free_Full(0);
 	return (EXIT_FAILURE);
 }

@@ -7,7 +7,7 @@
 int ERR_add(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-	free_Full();
+	free_Full(0);
 	return (EXIT_FAILURE);
 }
 /**
@@ -18,7 +18,7 @@ int ERR_add(unsigned int line_number)
 int ERR_sub(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-	free_Full();
+	free_Full(0);
 	return (EXIT_FAILURE);
 }
 /**
@@ -29,7 +29,7 @@ int ERR_sub(unsigned int line_number)
 int ERR_div(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
-	free_Full();
+	free_Full(0);
 	return (EXIT_FAILURE);
 }
 /**
@@ -40,7 +40,7 @@ int ERR_div(unsigned int line_number)
 int ERR_mul(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
-	free_Full();
+	free_Full(0);
 	return (EXIT_FAILURE);
 }
 /**
@@ -51,7 +51,7 @@ int ERR_mul(unsigned int line_number)
 int ERR_mod(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
-	free_Full();
+	free_Full(0);
 	return (EXIT_FAILURE);
 }
 

@@ -36,7 +36,7 @@ int ERR;
 FILE *FP;
 char *BUFFER;
 stack_t *STACK;
-char **parse_in_alloc_tab(char *s);
+int parse_in_alloc_tab(char *s);
 void (*find_function(char *code))(stack_t **, unsigned int);
 int print_dlistint(const stack_t *h);
 stack_t *add_dnodeint(stack_t **head, int n);
@@ -69,5 +69,5 @@ int ERR_div(unsigned int line_number);
 int ERR_mul(unsigned int line_number);
 int ERR_mod(unsigned int line_number);
 int ERR_div_o(unsigned int line_number);
-int free_Full(void);
+int free_Full(int flag);
 #endif

@@ -23,6 +23,7 @@ void free_exit(stack_t *stack, char *buffer, FILE *fp)
 int main(int argc, char **argv)
 {
 	size_t bufsize = 1000;
+	int i = 0;
 	ssize_t line_size;
 	unsigned int cpline = 1;
 	void (*code)(stack_t**, unsigned int);
@@ -39,23 +40,23 @@ int main(int argc, char **argv)
 	{
 		if (BUFFER[0] != '#')
 		{
-			parse_in_alloc_tab(BUFFER);
-			if (TB[0] == NULL)
-				ERR_invalid(cpline, TB[0]);
-			code = find_function(TB[0]);
-			if (code == NULL)
-				ERR_invalid(cpline, TB[0]);
-			if (code != NULL)
-				code(&STACK, cpline);
+			i = parse_in_alloc_tab(BUFFER);
+			if (TB[0] != NULL)
+			{
+				if (i == 1)
+				{
+					code = find_function(TB[0]);
+					if (code == NULL)
+						ERR_invalid(cpline, TB[0]);
+					if (code != NULL)
+						code(&STACK, cpline);
+				}
+			}
 			freetab(TB);
 		}
-		if (ERR == 1)
-			free_exit(STACK, BUFFER, FP);
 		line_size = getline(&BUFFER, &bufsize, FP);/*go to next line*/
 		cpline++;
 	}
-	free_stack(STACK);
-	free(BUFFER);
-	fclose(FP);
+	free_Full(1);
 	return (0);
 }
