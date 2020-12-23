@@ -67,4 +67,26 @@ void f_rotl(stack_t **stack, unsigned int line_number)
 	(*stack)->n = last_nb;
 	ptr->n = first_nb;
 }
+/**
+ * f_rotr - f_rotr
+ * @stack: stack
+ * @line_number: line number
+ * Return: void
+ */
+void f_rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr;
+
+	int last_nb;
+
+	(void)line_number;
+	ptr = *stack;
+	if (ptr == NULL)
+		return;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	last_nb = ptr->n;
+	(*stack)->n = last_nb;
+}
+
 

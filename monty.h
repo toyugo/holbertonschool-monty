@@ -55,6 +55,7 @@ void f_pchar(stack_t **stack, unsigned int line_number);
 void f_swap(stack_t **stack, unsigned int line_number);
 void f_pstr(stack_t **stack, unsigned int line_number);
 void f_rotl(stack_t **stack, unsigned int line_number);
+void f_rotr(stack_t **stack, unsigned int line_number);
 int freetab(char **tb);
 void free_stack(stack_t *head);
 int ERR_f_open(char *file_n);
