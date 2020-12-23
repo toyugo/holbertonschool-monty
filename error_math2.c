@@ -7,6 +7,7 @@
 int ERR_div_o(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: division by zero\n", line_number);
+	free_Full(-1);
 	return (EXIT_FAILURE);
 }
 
