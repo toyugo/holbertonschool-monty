@@ -7,7 +7,7 @@
 int freetab(char **tb)
 {
 	int j;
-	
+
 	(void)tb;
 	if (TB == NULL)
 		return (-1);

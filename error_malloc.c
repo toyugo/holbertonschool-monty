@@ -13,6 +13,10 @@ int ERR_malloc(void)
 	ERR = 1;
 	exit(EXIT_FAILURE);
 }
+/**
+ * free_Full - free_Full
+ * Return: 0
+ */
 int free_Full(void)
 {
 	free(BUFFER);
