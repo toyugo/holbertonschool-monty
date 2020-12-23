@@ -34,7 +34,7 @@ void f_sub(stack_t **stack, unsigned int line_number)
 		ERR_sub(line_number);
 		return;
 	}
-	ptr->next->n = ptr->n - ptr->next->n;
+	ptr->next->n = ptr->next->n - ptr->n;
 	f_Pop(stack, line_number);
 }
 /**
@@ -53,7 +53,7 @@ void f_mul(stack_t **stack, unsigned int line_number)
 		ERR_mul(line_number);
 		return;
 	}
-	ptr->next->n = ptr->n * ptr->next->n;
+	ptr->next->n = ptr->next->n * ptr->n;
 	f_Pop(stack, line_number);
 }
 /**
@@ -77,7 +77,7 @@ void f_div(stack_t **stack, unsigned int line_number)
 		ERR_div_o(line_number);
 		return;
 	}
-	ptr->next->n = ptr->n / ptr->next->n;
+	ptr->next->n = ptr->next->n / ptr->n;
 	f_Pop(stack, line_number);
 }
 /**
@@ -101,6 +101,6 @@ void f_mod(stack_t **stack, unsigned int line_number)
 		ERR_div_o(line_number);
 		return;
 	}
-	ptr->next->n = ptr->n % ptr->next->n;
+	ptr->next->n = ptr->next->n % ptr->n;
 	f_Pop(stack, line_number);
 }
