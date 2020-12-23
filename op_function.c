@@ -106,18 +106,15 @@ void f_pall(stack_t **stack, unsigned int line_number)
 void f_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr;
-	stack_t *tmp;
-	int n;
+	int i;
 
-	tmp = *stack;
 	ptr = *stack;
 	if (ptr == NULL || ptr->next == NULL)
 	{
 		ERR_swap(line_number);
 		return;
 	}
-	ptr = ptr->next;
-	n = ptr->n;
-	tmp->n = ptr->n;
-	ptr->n = n;
+	i = ptr->next->n;
+	ptr->next->n = ptr->n; 
+	ptr->n = i;
 }
