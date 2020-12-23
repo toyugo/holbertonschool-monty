@@ -31,7 +31,7 @@ void f_pchar(stack_t **stack, unsigned int line_number)
 void f_pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr;
-	
+
 	(void)line_number;
 	ptr = *stack;
 
@@ -43,5 +43,28 @@ void f_pstr(stack_t **stack, unsigned int line_number)
 		ptr = ptr->next;
 	}
 	putchar('\n');
+}
+/**
+ * f_rotl - f_rotl
+ * @stack: stack
+ * @line_number: line number
+ * Return: void
+ */
+void f_rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *ptr;
+	int first_nb;
+	int last_nb;
+
+	(void)line_number;
+	ptr = *stack;
+	if (ptr == NULL)
+		return;
+	first_nb = ptr->n;
+	while (ptr->next != NULL)
+		ptr = ptr->next;
+	last_nb = ptr->n;
+	(*stack)->n = last_nb;
+	ptr->n = first_nb;
 }
 
