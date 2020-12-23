@@ -115,6 +115,6 @@ void f_swap(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	i = ptr->next->n;
-	ptr->next->n = ptr->n; 
+	ptr->next->n = ptr->n;
 	ptr->n = i;
 }
