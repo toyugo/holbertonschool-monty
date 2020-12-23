@@ -72,4 +72,5 @@ int ERR_div_o(unsigned int line_number);
 int ERR_swap(unsigned int line_number);
 int free_Full(int flag);
 int ERR_pchar(unsigned int line_number);
+int ERR_pchar_range(unsigned int line_number);
 #endif

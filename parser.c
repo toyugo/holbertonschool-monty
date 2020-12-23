@@ -60,7 +60,7 @@ void (*find_function(char *code))(stack_t **, unsigned int)
 		{"div", f_div},
 		{"mod", f_mod},
 		{"swap", f_swap},
-/*		{"pchar", f_pchar},*/
+		{"pchar", f_pchar},
 		{NULL, NULL}
 	};
 	/*check in instruction*/
