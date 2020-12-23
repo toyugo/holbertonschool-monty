@@ -13,7 +13,6 @@ void f_Pop(stack_t **stack, unsigned int line_number)
 	ptr = *stack;
 	if (ptr == NULL)
 	{
-		printf("ERROR");
 		ERR_pop(line_number);
 		return;
 	}
