@@ -91,7 +91,7 @@ void f_mod(stack_t **stack, unsigned int line_number)
 	stack_t *ptr;
 
 	ptr = *stack;
-	if (ptr == NULL || ptr->next == NULL || ptr->next->n == 0)
+	if (ptr == NULL || ptr->next == NULL)
 	{
 		ERR_mod(line_number);
 		return;
