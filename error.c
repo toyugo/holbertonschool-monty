@@ -26,7 +26,7 @@ int ERR_arg(void)
  */
 int ERR_push(unsigned int line_number)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	fprintf(stderr, "L%d: usagejjj: push integer\n", line_number);
 	ERR = 1;
 	return (EXIT_FAILURE);
 }
