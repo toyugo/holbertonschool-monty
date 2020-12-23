@@ -70,4 +70,5 @@ int ERR_mul(unsigned int line_number);
 int ERR_mod(unsigned int line_number);
 int ERR_div_o(unsigned int line_number);
 int free_Full(int flag);
+int ERR_pchar(int line_number);
 #endif
