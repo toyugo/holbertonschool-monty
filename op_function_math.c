@@ -72,7 +72,7 @@ void f_div(stack_t **stack, unsigned int line_number)
 		ERR_div(line_number);
 		return;
 	}
-	if (ptr->next->n == 0)
+	if (ptr->next->n == 0 || ptr->n == 0)
 	{
 		ERR_div_o(line_number);
 		return;
