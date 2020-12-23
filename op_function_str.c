@@ -53,19 +53,30 @@ void f_pstr(stack_t **stack, unsigned int line_number)
 void f_rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr;
-	int first_nb;
-	int last_nb;
+	stack_t *ptrM;
+	int tmp_nb;
 
 	(void)line_number;
 	ptr = *stack;
+	ptrM = *stack;
 	if (ptr == NULL)
 		return;
-	first_nb = ptr->n;
+
+	while (ptrM->next != NULL)
+		ptrM = ptrM->next;
+	tmp_nb = ptr->n;
+	ptr->n = ptrM->n;
+	ptrM->n = tmp_nb;
+	ptrM = *stack;
+	ptr = ptr->next;
 	while (ptr->next != NULL)
+	{
+		tmp_nb = ptr->n;
+		ptr->n = ptrM->n;
+		ptrM->n = tmp_nb;
+		ptrM = ptrM->next;
 		ptr = ptr->next;
-	last_nb = ptr->n;
-	(*stack)->n = last_nb;
-	ptr->n = first_nb;
+	}
 }
 /**
  * f_rotr - f_rotr
