@@ -96,7 +96,7 @@ void f_mod(stack_t **stack, unsigned int line_number)
 		ERR_mod(line_number);
 		return;
 	}
-	if (ptr->next->n == 0)
+	if (ptr->next->n == 0 || ptr->n == 0)
 	{
 		ERR_div_o(line_number);
 		return;
