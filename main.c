@@ -48,8 +48,8 @@ int main(int argc, char **argv)
 				if (code != NULL)
 					code(&STACK, cpline);
 			}
-			freetab(TB);
 		}
+		freetab(TB);
 		line_size = getline(&BUFFER, &bufsize, FP);/*go to next line*/
 		cpline++;
 	}
