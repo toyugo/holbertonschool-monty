@@ -30,28 +30,25 @@ int main(int argc, char **argv)
 	STACK = NULL;
 	BUFFER = NULL;
 	if (argc != 2)
-	{
 		ERR_arg();
-		exit(EXIT_FAILURE);
-	}
 	FP = fopen(argv[1], "r");
 	if (!FP)
-	{
 		ERR_f_open(argv[1]);
-		exit(EXIT_FAILURE);
-	}
 	line_size = getline(&BUFFER, &bufsize, FP);
 	while (line_size != EOF)
 	{
-		parse_in_alloc_tab(BUFFER);
-		if (TB[0] == NULL)
-			ERR_invalid(cpline, TB[0]);
-		code = find_function(TB[0]);
-		if (code == NULL)
-			ERR_invalid(cpline, TB[0]);
-		if (code != NULL)
-			code(&STACK, cpline);
-		freetab(TB);
+		if (BUFFER[0] != '#')
+		{
+			parse_in_alloc_tab(BUFFER);
+			if (TB[0] == NULL)
+				ERR_invalid(cpline, TB[0]);
+			code = find_function(TB[0]);
+			if (code == NULL)
+				ERR_invalid(cpline, TB[0]);
+			if (code != NULL)
+				code(&STACK, cpline);
+			freetab(TB);
+		}
 		if (ERR == 1)
 			free_exit(STACK, BUFFER, FP);
 		line_size = getline(&BUFFER, &bufsize, FP);/*go to next line*/

@@ -8,8 +8,7 @@ int ERR_f_open(char *file_n)
 {
 	(void)file_n;
 	fprintf(stderr, "Error: Can't open file %s\n", file_n);
-	ERR = 1;
-	return (EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }
 /**
  * ERR_arg - ERR_arg
@@ -19,7 +18,7 @@ int ERR_arg(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	ERR = 1;
-	return (EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }
 /**
  * ERR_push- ERR_push
