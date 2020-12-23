@@ -51,6 +51,9 @@ void f_sub(stack_t **stack, unsigned int line_number);
 void f_mul(stack_t **stack, unsigned int line_number);
 void f_div(stack_t **stack, unsigned int line_number);
 void f_mod(stack_t **stack, unsigned int line_number);
+
+void f_pchar(stack_t **stack, unsigned int line_number);
+
 int freetab(char **tb);
 void free_stack(stack_t *head);
 int ERR_f_open(char *file_n);
