@@ -39,6 +39,7 @@ void free_stack(stack_t *head)
 }
 /**
  * free_Full - free_Full
+ * @flag - -1 fail
  * Return: 0
  */
 int free_Full(int flag)
