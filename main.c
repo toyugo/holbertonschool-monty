@@ -37,9 +37,9 @@ int main(int argc, char **argv)
 	line_size = getline(&BUFFER, &bufsize, FP);
 	while (line_size != EOF)
 	{
-		if (BUFFER[0] != '#')
+		parse_in_alloc_tab(BUFFER);
+		if (TB[0][0] != '#')
 		{
-			parse_in_alloc_tab(BUFFER);
 			if (TB[0] != NULL)
 			{
 				code = find_function(TB[0]);
