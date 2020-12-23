@@ -31,8 +31,8 @@ void f_pchar(stack_t **stack, unsigned int line_number)
 void f_pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *ptr;
-	ptr = *stack;
 
+	ptr = *stack;
 	if (ptr == NULL)
 	{
 		ERR_pchar(line_number);
