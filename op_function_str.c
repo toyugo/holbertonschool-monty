@@ -38,7 +38,7 @@ void f_pstr(stack_t **stack, unsigned int line_number)
 		ERR_pchar(line_number);
 		return;
 	}
-	while (ptr->n && ptr)
+	while (ptr && ptr->n)
 	{
 		if (ptr->n < 0 || ptr->n > 127)
 		{
