@@ -41,10 +41,7 @@ void f_pstr(stack_t **stack, unsigned int line_number)
 	while (ptr && ptr->n)
 	{
 		if (ptr->n < 0 || ptr->n > 127)
-		{
-			ERR_pchar_range(line_number);
-			return;
-		}
+			break;
 		printf("%c", ptr->n);
 		ptr = ptr->next;
 	}
